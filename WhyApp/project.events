@@ -1,0 +1,308 @@
+a:1:{s:5:"form1";a:39:{s:8:"maintext";N;s:7:"button3";a:1:{s:11:"onmousedown";s:242:"c("listBox1")->itemIndex = 0;
+с("label3")->text = "0";
+$info = parse_ini_file('config.ini', true);
+$pathprog = $info['main']['pathprog'];
+Run("$pathprog");
+Sleep(2);
+exec ("window.dll WhatsApp 650 500 63 0");
+c("click")->enable = true;";}s:8:"--fmedit";a:1:{s:6:"onshow";s:687:"HotKey::add(false, VK_F6, 'stop');
+HotKey::add(false, VK_F7, 'start');
+$numbers = file_get_contents ("data\\numbers.txt");
+c("listBox2")->text = $numbers;
+$numarch = file_get_contents ("data\\numarch.txt");
+c("memo2")->text = $numarch;
+////////ini
+$info = parse_ini_file('config.ini', true);
+c("edit3")->text = $info['main']['number'];
+c("edit1")->text = $info['main']['statsrv'];
+c("edit2")->text = $info['main']['linkid'];
+c("maintext")->text = $info['main']['message'];
+
+
+
+$checklink = $info['main']['addlnk'];
+$checkfilter = $info['main']['filter'];
+if ($checklink !=0)
+{
+c("checkbox1")->checked = true;
+}
+if ($checkfilter !=0)
+{
+c("timer1")->enable = true;
+}";}s:5:"click";a:1:{s:7:"ontimer";s:520:"$count = c("listBox1")->items->count;
+$numc = c("label3")->text;
+$stat = c("edit1")->text;
+$lnk = c("edit2")->text;
+$file = "data\\sent.txt";
+///////////////////////////////
+if ($numc != $count)
+{
+c("listBox1")->itemIndex = $numc;
+$list = c("listBox1")->items->selected;
+c("label7")->text = "$stat/O$numc$lnk";
+clicker();
+$forlist = "\n$list";
+file_put_contents($file, $forlist, FILE_APPEND);
+}
+else
+{
+c("click")->enable = false;
+echo ("Send complete");
+}
+$numc = $numc+1;
+c("label3")->text = $numc;";}s:7:"button1";a:1:{s:11:"onmousedown";s:26:"exec("data\\numbers.txt");";}s:7:"button2";a:1:{s:11:"onmousedown";s:23:"exec("data\\sent.txt");";}s:7:"button4";a:1:{s:11:"onmousedown";s:84:"c("listBox1")->itemIndex = 0;
+с("label4")->text = "0";
+c("vcfrun")->enable = true;";}s:6:"vcfrun";a:1:{s:7:"ontimer";s:768:"
+$count = c("listBox1")->items->count;
+$numc = c("label4")->text;
+$path=(winLocalPath(CSIDL_DESKTOP));
+$pathtotxt = "$path\\vcardgen.vcf";
+$memo = c("memo1")->text;
+///////////////////////////////
+if ($numc != $count)
+{
+c("listBox1")->itemIndex = $numc;
+$list = c("listBox1")->items->selected;
+$numbre = $list;
+$replace = str_replace ("numbertoedit","$numbre",$memo);
+file_put_contents($pathtotxt, "$replace\n", FILE_APPEND);
+}
+else
+{
+$numbre = c("edit3")->text;
+$replace1 = str_replace ("numbertoedit","$numbre",$memo);
+$replace = str_replace ("Sanatory","NonEx",$replace1);
+file_put_contents($pathtotxt, "$replace\n", FILE_APPEND);
+c("vcfrun")->enable = false;
+echo ("VCF Generation complete!");
+}
+$numc = $numc+1;
+c("label4")->text = $numc;";}s:5:"opnum";a:1:{s:9:"onexecute";s:249:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['opnumx'];
+$y = $info['pos']['opnumy'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:3:"gnf";a:1:{s:9:"onexecute";s:183:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['gnfx'];
+$y = $info['pos']['gnfy'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:4:"pasn";a:1:{s:9:"onexecute";s:137:"$list = c("listBox1")->items->selected;
+clipboard_settext("$list");
+$WshShell = new COM("WScript.Shell");
+$WshShell->SendKeys("^{м}");";}s:5:"clnum";a:1:{s:9:"onexecute";s:187:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['clnumx'];
+$y = $info['pos']['clnumy'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:3:"att";a:1:{s:9:"onexecute";s:183:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['attx'];
+$y = $info['pos']['atty'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:6:"imgbut";a:1:{s:9:"onexecute";s:189:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['imgbutx'];
+$y = $info['pos']['imgbuty'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:6:"imgchs";a:1:{s:9:"onexecute";s:233:"exec ("window.dll Открытие 100 100 65 0");
+$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['imgchsx'];
+$y = $info['pos']['imgchsy'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:5:"imgok";a:1:{s:9:"onexecute";s:187:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['imgokx'];
+$y = $info['pos']['imgoky'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:5:"takef";a:1:{s:9:"onexecute";s:187:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['takefx'];
+$y = $info['pos']['takefy'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:4:"pasf";a:1:{s:9:"onexecute";s:349:"$txt = c("maintext")->text;
+$link = c("label7")->text;
+if (c("checkbox1")->checked == true)
+{
+$txt2 = "$txt - $link";
+clipboard_settext("$txt2");
+$WshShell = new COM("WScript.Shell");
+$WshShell->SendKeys("^{м}");
+}
+else
+{
+$txt2 = "$txt";
+clipboard_settext("$txt2");
+$WshShell = new COM("WScript.Shell");
+$WshShell->SendKeys("^{м}");
+}";}s:4:"send";a:1:{s:9:"onexecute";s:185:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['sendx'];
+$y = $info['pos']['sendy'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:7:"clicker";a:1:{s:9:"onexecute";s:14:"//anti-noob)))";}s:4:"stop";a:1:{s:9:"onexecute";s:60:"c("click")->enable = false;
+echo ("Рассылка остановлена!");";}s:5:"start";a:1:{s:9:"onexecute";s:26:"c("click")->enable = true;";}s:6:"label8";N;s:7:"button8";a:1:{s:11:"onmousedown";s:180:"$txt = c("memo3")->text;
+$txt = str_replace ("+", "", $txt);
+$txt = "\n$txt";
+$fp = fopen("data\\numarch.txt", "a+");
+fwrite($fp, $txt);
+fclose($fp);
+MessageBox("DONE!", "");";}s:7:"button9";a:1:{s:11:"onmousedown";s:62:"clipboard_settext(c("memo3")->text);
+MessageBox("DONE!", "");";}s:8:"button11";a:1:{s:11:"onmousedown";s:26:"exec("data\\numarch.txt");";}s:6:"timer1";a:1:{s:7:"ontimer";s:846:"
+$count = c("listBox2")->items->count;
+$numc = c("label3")->text;
+$file = c("memo2")->text;
+$file2 = c("memo3")->text;
+///////////////////////////////
+if ($numc != $count)
+{
+c("listBox2")->itemIndex = $numc;
+$list = c("listBox2")->items->selected;
+$list2 = str_replace ("+", "", $list);
+if(preg_match("($list2)", $file))
+{
+}
+else
+{
+$memo = c("memo3")->text;
+$fmem = "$memo\n$list";
+////////////////
+if(preg_match("($list2)", $file2))
+{
+}
+else
+{
+if ($memo == "")
+{
+c("memo3")->text = $list;
+c("listBox1")->inText = "$list2";
+}
+else
+{
+c("memo3")->text = $fmem;
+c("listBox1")->inText = "$list2";
+}
+}
+////////////////
+}
+$numc = $numc+1;
+c("label3")->text = $numc;
+}
+else
+{
+$itemsnum = c("listBox1")->items->count;
+c("timer1")->enable = false;
+c("label9")->text =$itemsnum;
+}
+/////////////////////////////";}s:4:"nex1";a:1:{s:9:"onexecute";s:185:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['nex1x'];
+$y = $info['pos']['nex1y'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:6:"pasnex";a:1:{s:9:"onexecute";s:123:"$list = c("edit3")->text;
+clipboard_settext("$list");
+$WshShell = new COM("WScript.Shell");
+$WshShell->SendKeys("^{м}");";}s:5:"clnex";a:1:{s:9:"onexecute";s:187:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['clnexx'];
+$y = $info['pos']['clnexy'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:6:"backer";a:1:{s:9:"onexecute";s:189:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['backerx'];
+$y = $info['pos']['backery'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);";}s:7:"button5";a:1:{s:11:"onmousedown";s:272:"$numbers = file_get_contents ("data\\numbers.txt");
+c("listBox2")->text = $numbers;
+$numarch = file_get_contents ("data\\numarch.txt");
+c("memo2")->text = $numarch;
+
+c("memo3")->text = "";
+c("label3")->text = "0";
+c("listBox1")->text = "";
+c("label9")->text = "0";";}s:7:"button6";a:1:{s:11:"onmousedown";s:27:"c("timer1")->enable = true;";}s:4:"posg";a:1:{s:7:"ontimer";s:119:"$x = cursor_pos_x();
+$y = cursor_pos_y();
+
+c("statusBar1")->simpleText = "Position: x = " . $x . "," . " y = " . $y;";}s:7:"button7";a:1:{s:11:"onmousedown";s:20:"exec ("config.ini");";}s:5:"check";a:1:{s:9:"onexecute";s:1085:"$info = parse_ini_file('config.ini', true);
+$x = $info['pos']['chfldx'];
+$y = $info['pos']['chfldy'];
+$srcstr = $info['main']['srcstr'];
+setCursorPos($x,$y);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);
+Mouse_Event(2, $x, $y, 0, 0);
+Mouse_Event(4, $x, $y, 0, 0);
+//Mouse_Event(2, $x, $y, 0, 0);
+//Mouse_Event(4, $x, $y, 0, 0);
+//$txt2 = "$txt";
+//clipboard_settext("$txt2");
+//sleep(2);
+sleep(1);
+clipboard_settext("");
+$WshShell = new COM("WScript.Shell");
+$WshShell->SendKeys("^{с}");
+sleep(2);
+$buf = clipboard_gettext();
+//echo $buf;
+//$list2 = "";
+//sleep(1);
+//if(preg_match("($srcstr)", $buf))
+if($buf == $srcstr)
+{
+//echo ("found - $buf");
+//c("click")->enable = false;
+$file = "data\\not_sent.txt";
+$list = c("listBox1")->items->selected;
+$forlist = "\n$list";
+file_put_contents($file, $forlist, FILE_APPEND);
+}
+else
+{
+//echo ("not found - $buf");
+//c("click")->enable = false;
+att();
+sleep(0);
+imgbut();
+sleep(1);
+imgchs();
+sleep(0);
+imgok();
+sleep(1);
+takef();
+sleep(0);
+pasf();
+sleep(1);
+send();
+sleep(1);
+}";}s:8:"button10";a:1:{s:11:"onmousedown";s:242:"c("listBox1")->itemIndex = 0;
+с("label3")->text = "0";
+//$info = parse_ini_file('config.ini', true);
+//$pathprog = $info['main']['pathprog'];
+//Run("$pathprog");
+Sleep(2);
+exec ("window.dll 390 650 63 0");
+c("clicknox")->enable = true;";}s:8:"clicknox";a:1:{s:7:"ontimer";s:526:"$count = c("listBox1")->items->count;
+$numc = c("label3")->text;
+$stat = c("edit1")->text;
+$lnk = c("edit2")->text;
+$file = "data\\sent.txt";
+///////////////////////////////
+if ($numc != $count)
+{
+c("listBox1")->itemIndex = $numc;
+$list = c("listBox1")->items->selected;
+c("label7")->text = "$stat/O$numc$lnk";
+clickernox();
+$forlist = "\n$list";
+file_put_contents($file, $forlist, FILE_APPEND);
+}
+else
+{
+c("clicknox")->enable = false;
+echo ("Send complete");
+}
+$numc = $numc+1;
+c("label3")->text = $numc;";}s:10:"clickernox";a:1:{s:9:"onexecute";s:16:"//antinoob (_!_)";}}}
